@@ -7,13 +7,13 @@ import './App.css';
 const theme = {
   background: '#f5f8fb',
   fontFamily: 'Helvetica Neue',
-  headerBgColor: '#EF6C00',
+  headerBgColor: '#0775ec',
   headerFontColor: '#fff',
-  headerFontSize: '15px',
-  botBubbleColor: '#EF6C00',
+  headerFontSize: '18px',
+  botBubbleColor: '#0775ec',
   botFontColor: '#fff',
-  userBubbleColor: '#fff',
-  userFontColor: '#4a4a4a',
+  userBubbleColor: '#3fd408',
+  userFontColor: '#fff',
 };
 
 const steps = [
@@ -35,13 +35,13 @@ const steps = [
 ];
 
 const App = () => {
-  const [showChatbot, toggleChatbot] = React.useState(false);
-
   return (
     <ThemeProvider theme={theme}>
-      <div className='App-header'>
-        <h1>AI Chatbot</h1>
-        <ChatBot steps={steps} />
+      <div className='app-container'>
+        <div className='app-header'>AI Chatbot</div>
+        <div className='chatbot-container'>
+          <ChatBot steps={steps} floating={true} headerTitle='Assistant Bot' />
+        </div>
       </div>
     </ThemeProvider>
   );
